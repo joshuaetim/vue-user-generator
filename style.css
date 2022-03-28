@@ -1,12 +1,13 @@
 body{
     background: -webkit-linear-gradient(left, #0c0111, #110116);
+    font-family: 'Quicksand', sans-serif;
 }
-.emp-profile{
+.vue-app{
     padding: 3%;
     margin-top: 3%;
     margin-bottom: 3%;
     border-radius: 0.5rem;
-    background: #fff;
+    background: rgb(255, 255, 255);
 }
 .profile-img{
     text-align: center;
@@ -25,15 +26,11 @@ body{
     font-size: 15px;
     background: #212529b8;
 }
-.profile-img .file input {
-    position: absolute;
-    opacity: 0;
-    right: 0;
-    top: 0;
+
+td {
+    font-size: 15px;
 }
-.profile-head h5{
-    color: #333;
-}
-.profile-head h6{
-    color: #0062cc;
+
+.value {
+    font-weight: bold;
 }

@@ -5,78 +5,95 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet"> 
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    <div class="container emp-profile" id="app">
+    <div class="container vue-app" id="app">
         <form method="post">
             <div class="row">
                 <div class="col-md-4">
                     <div class="profile-img">
                         <img :src="picture" :alt="`${firstName} ${lastName}`"/>
                         <div class="file btn btn-lg btn-primary">
-                            Change Photo
+                            {{firstName}} {{lastName}}
                         </div>
+                    </div>
+                    <div class="container">
+                        <p class="text-center"><b>Login Info</b></p>
+                        <table class="table">
+                            <tr>
+                                <td>username</td>
+                                <td>{{username}}</td>
+                            </tr>
+                            <tr>
+                                <td>password</td>
+                                <td>{{password}}</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <p>{{firstName}} {{lastName}}</p>
-                    <p>Click here to get a temporary work email 
-                    <button class="float-right" v-on:click="getUser()">Generate New User</button>
+                    <h4>{{firstName}} {{lastName}}</h4>
+                    <p><a href="https://tempail.com/en/" target="_blank">Click here to get a temporary work email </a>
+                    <button class="float-right btn btn-dark" v-on:click="getUser()">Generate New User</button>
                     </p>
 
+                    <br>
                     <table class="table">
-                        <h5>Personal Info</h5>
+                        <p><b>Personal Info</b></p>
                         <tr>
                             <td>Title</td>
-                            <td>{{title}}</td>
+                            <td class="value">{{title}}</td>
                         </tr>
                         <tr>
                             <td>First name</td>
-                            <td>{{firstName}}</td>
+                            <td class="value">{{firstName}}</td>
                         </tr>
                         <tr>
                             <td>Last Name</td>
-                            <td>{{lastName}}</td>
+                            <td class="value">{{lastName}}</td>
                         </tr>
                         <tr>
                             <td>Gender</td>
-                            <td>{{gender}}</td>
+                            <td class="value">{{gender}}</td>
                         </tr>
                         <tr>
                             <td>Date of birth</td>
-                            <td>{{dob}}</td>
+                            <td class="value">{{dob}}</td>
                         </tr>
                         <tr>
                             <td>Age</td>
-                            <td>{{age}}</td>
+                            <td class="value">{{age}}</td>
                         </tr>
                     </table>
-
+                    <hr>
                     <table class="table">
-                        <h5>Address</h5>
+                        <p><b>Address</b></p>
                         <tr>
                             <td>Street</td>
-                            <td>{{street}}</td>
+                            <td class="value">{{street}}</td>
                         </tr>
                         <tr>
                             <td>City</td>
-                            <td>{{city}}</td>
+                            <td class="value">{{city}}</td>
                         </tr>
                         <tr>
                             <td>State</td>
-                            <td>{{state}}</td>
+                            <td class="value">{{state}}</td>
                         </tr>
                         <tr>
                             <td>Postcode</td>
-                            <td>{{postcode}}</td>
+                            <td class="value">{{postcode}}</td>
                         </tr>
                         <tr>
                             <td>Phone</td>
-                            <td>{{phone}}</td>
+                            <td class="value">{{phone}}</td>
                         </tr>
                     </table>
                 </div>
