@@ -24,6 +24,7 @@ const app = Vue.createApp({
     },
     methods: {
         getUser(){
+            event.preventDefault()
             fetchDataAPI(this)
         }
     },
@@ -44,7 +45,7 @@ function updateFields(that, results) {
     that.postcode = results[0].location.postcode
     that.phone = results[0].phone
     that.username = results[0].login.username
-    that.password = results[0].login.password
+    that.password = GeneratePassword(16)
 }
 
 async function fetchDataAPI(that) {
@@ -52,6 +53,15 @@ async function fetchDataAPI(that) {
     const { results } = await res.json()
 
     updateFields(that, results)
+}
+
+function GeneratePassword(length) {
+    result = ''
+    var chars = '!@#$%^&*()_+{}|ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    for (var i = 0; i <length; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length))
+    }
+    return result
 }
 
 app.mount('#app')
