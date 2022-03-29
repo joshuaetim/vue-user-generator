@@ -49,7 +49,7 @@ function updateFields(that, results) {
 }
 
 async function fetchDataAPI(that) {
-    const res = await fetch('https://randomuser.me/api')
+    const res = await fetch('https://randomuser.me/api/?nat=us')
     const { results } = await res.json()
 
     updateFields(that, results)
