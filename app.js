@@ -64,4 +64,8 @@ function GeneratePassword(length) {
     return result
 }
 
+function fieldsDeploy() {
+    // todo
+}
+
 app.mount('#app')
